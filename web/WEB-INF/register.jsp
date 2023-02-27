@@ -9,9 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Register Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Shopping List - Register</h1>
+	<c:if test="${not empty error}">
+		<p style="color: red;">${error}</p>
+	</c:if>
+	<form method="post" action="ShoppingList">
+		<label for="username">Username:</label>
+		<input type="text" name="username" id="username" required>
+		<input type="hidden" name="action" value="register">
+		<input type="submit" value="Register name">
+	</form>
     </body>
 </html>
